@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Presley Yang – Photography</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap">
+<style>
+:root{--bg:#f0f0f0;--ink:#1b1b1b;--mid:#686864;--line:#c6c6c2;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{background:var(--bg);scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 16px/1.65 "DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration:none}
+header{position:relative;z-index:10;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;padding:1.6rem clamp(1rem,4vw,3rem)}
+.name{font-weight:500;letter-spacing:.01em}
+nav{display:flex;gap:1.8rem}
+nav a{color:var(--mid);padding:.2rem 0;border-bottom:1px solid transparent}
+nav a:hover,nav a[aria-current]{color:var(--ink);border-bottom-color:var(--ink)}
+.dd{position:relative}
+.dd>button{font:inherit;background:none;border:0;border-bottom:1px solid transparent;color:var(--mid);padding:.2rem 0;cursor:default}
+.dd>button:hover,.dd>button[aria-current],.dd.open>button{color:var(--ink);border-bottom-color:var(--ink)}
+.dd ul{list-style:none;margin:0;padding:.9rem 0 0;position:absolute;top:100%;right:0;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .3s ease,transform .3s ease,visibility .3s}
+.dd:hover ul,.dd:focus-within ul,.dd.open ul{opacity:1;visibility:visible;transform:none}
+.dd li a{display:block;padding:.3rem 0;border:0;white-space:nowrap;color:var(--mid)}
+.dd li a:hover{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.dd ul{transition:none}}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+main{padding:1rem clamp(1rem,4vw,3rem) 5rem;max-width:1400px;margin:0 auto;animation:rise .55s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){main{animation:none}}
+h1{font-weight:700;font-size:1rem;line-height:1.65;margin:.5rem 0 .15rem;letter-spacing:0}
+.meta{color:var(--mid);margin:0}
+.proj{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:clamp(1.5rem,5vw,4rem);align-items:end;margin-bottom:4rem}
+.proj img{width:100%;display:block}
+.proj h2{font-weight:300;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.15;margin:0 0 .6rem}
+.lead{max-width:62ch;margin:1.5rem 0 0}
+.frames{margin-top:3rem;align-items:start;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,3vw,2.5rem)}
+.frames figure,.cols figure{margin:0}
+.frames img,.cols img{width:100%;display:block;cursor:zoom-in}
+figcaption{color:var(--mid);font-size:.8rem;margin-top:.4rem}
+.sw{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:clamp(1.5rem,4vw,3rem);align-items:start}
+.sw h1{margin-top:0}
+.stage{margin-top:2rem;height:clamp(260px,calc(100vh - 21rem),820px);height:clamp(260px,calc(100svh - 21rem),820px);display:grid;grid-template-columns:3.5rem minmax(0,1fr) 3.5rem;grid-template-rows:100%;align-items:center;justify-items:center}
+.lead.after{margin:2.5rem 0 0}
+.stage.sm img{max-width:90%;max-height:90%}
+.stage button{background:none;border:0;color:var(--mid);cursor:pointer;padding:1rem .5rem;display:flex}
+.stage button:hover{color:var(--ink)}
+.stage button svg{width:1.4rem;height:2.5rem}
+.stage img{max-width:100%;max-height:100%;display:block;cursor:zoom-in;animation:fade .55s ease both}
+.ctl{display:flex;justify-content:center;align-items:center;gap:2rem;margin-top:1rem;color:var(--mid)}
+.ctl button{background:none;border:0;font:inherit;color:var(--mid);cursor:pointer;padding:.4rem 0}
+.ctl button:hover{color:var(--ink)}
+@media(max-width:800px){.sw{grid-template-columns:1fr}.stage{grid-template-columns:2.2rem minmax(0,1fr) 2.2rem;height:clamp(220px,calc(100svh - 21rem),640px)}}
+@media (prefers-reduced-motion:reduce){.stage img{animation:none}}
+.cols{columns:3;column-gap:clamp(1rem,3vw,2.5rem)}
+.cols figure{break-inside:avoid;margin-bottom:clamp(1rem,3vw,2.5rem)}
+.home{display:flex;justify-content:center;align-items:center;min-height:calc(100vh - 10.75rem);min-height:calc(100svh - 10.75rem)}
+.home img{display:block;max-width:76.5%;max-height:calc((100vh - 8rem)*.765);max-height:calc((100svh - 8rem)*.765)}
+.works{display:flex;flex-wrap:wrap;gap:clamp(1.5rem,4vw,3.5rem);justify-content:center;align-items:flex-start}
+.works figure{flex:0 1 min(30rem,100%);margin:0}
+.works img{width:100%;display:block;cursor:zoom-in}
+.about{max-width:62ch}
+.about p{margin:0 0 1.2rem}
+.about a{color:var(--ink);border-bottom:1px solid var(--mid)}
+.about a:hover{border-bottom-color:var(--ink)}
+dialog{border:0;padding:0;background:var(--bg);color:var(--ink);max-width:100vw;max-height:100vh;width:100%;height:100%}
+dialog::backdrop{background:transparent}
+dialog[open]{animation:fade .55s ease both}
+dialog img{animation:fade .55s ease both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){dialog[open],dialog img{animation:none}}
+dialog img{position:absolute;inset:4rem 1rem;width:calc(100% - 2rem);height:calc(100% - 8rem);object-fit:contain}
+dialog button{position:absolute;background:none;border:0;color:var(--ink);font:inherit;cursor:pointer;padding:1rem}
+.x{top:0;right:0}.pv{bottom:0;left:0}.nx{bottom:0;right:0}
+.cap{position:absolute;bottom:1rem;left:0;right:0;text-align:center;color:var(--mid)}
+@media(max-width:800px){.proj{grid-template-columns:1fr}.frames{grid-template-columns:repeat(2,1fr)}.cols{columns:2}}
+</style>
+</head>
+<body>
+<header><a class="name" href="#home">Presley Yang</a>
+<nav aria-label="Main"><div class="dd"><button type="button" class="pj" data-r="project" aria-haspopup="true" aria-expanded="false">Project</button><ul id="sub"></ul></div><a href="#works" data-r="works">Works</a><a href="#about" data-r="about">About</a></nav></header>
+<main id="m"></main>
+<dialog id="lb"><button class="x" aria-label="Close">Close</button><img alt=""><button class="pv" aria-label="Previous">Previous</button><span class="cap"></span><button class="nx" aria-label="Next">Next</button></dialog>
+<script>
+const HOME="p01.jpg";
+const PROJECTS=[
+{slug:"water-always-flows-downhill",mode:"slides",title:"Water Always Flows Downhill",year:"2024",info:"Photo Series, Liquid Emulsion, Plant-Based Developer, Field Recording, Installation",size:"8 × 8 inches each",cover:9,text:"This project aims to experiment with the reality and time being cut up and presented into still film and reassembled through sound. This project displayed 12 images that I photographed at a stream in Santa Barbara shot in one roll as the sound recording that was recorded when these 12 images were taken. And the film was developed by my own-made plant based developer mixing with the plant I collected along the way of the stream and the water I collected from the stream.",imgs:["p02.jpg", "p03.jpg", "p04.jpg", "p05.jpg", "p06.jpg", "p07.jpg", "p08.jpg", "p09.jpg", "p10.jpg", "p11.jpg", "p12.jpg", "p13.jpg"]},
+{slug:"static-flow",mode:"slides",wide:[true, true, true, true, true, true, true, true, true, false, true, true],title:"Static Flow",year:"2024",info:"Photo Series, Liquid Emulsion, Handmade Paper",size:"",cover:4,text:"",imgs:["p14.jpg", "p15.jpg", "p16.jpg", "p17.jpg", "p18.jpg", "p19.jpg", "p20.jpg", "p21.jpg", "p22.jpg", "p23.jpg", "p24.jpg", "p25.jpg"]}];
+const WORKS=["p26.jpg","p27.jpg","p28.jpg","p29.jpg","p30.jpg","p31.jpg"];
+const ALL=[];PROJECTS.forEach((p,pi)=>p.imgs.forEach((s,n)=>ALL.push({s,pi,n})));
+WORKS.forEach((s,n)=>ALL.push({s,pi:-1,n,alt:"Work "+(n+1)}));
+const start=PROJECTS.map((p,pi)=>ALL.findIndex(a=>a.pi===pi));
+const m=document.getElementById("m"),lb=document.getElementById("lb");let cur=0,ctx=[],nav=null,tick=null;
+const fig=(g,cap)=>{const a=ALL[g];return `<figure><img src="${a.s}" alt="${a.alt||PROJECTS[a.pi].title+", frame "+(a.n+1)}" data-g="${g}" loading="lazy">${cap?`<figcaption>${cap}</figcaption>`:""}</figure>`};
+const meta=p=>`<p class="meta">${p.info}</p><p class="meta">${p.size?p.size+", ":""}${p.year}</p>`;
+document.getElementById("sub").innerHTML=PROJECTS.map(p=>`<li><a href="#${p.slug}">${p.title}</a></li>`).join("");
+function render(){
+  const dd=document.querySelector(".dd");dd.classList.remove("open");dd.querySelector("button").setAttribute("aria-expanded","false");if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();
+  const h=location.hash.slice(1)||"home";
+  const pi=PROJECTS.findIndex(p=>p.slug===h);
+  document.querySelectorAll("nav [data-r]").forEach(a=>{const on=a.dataset.r===(pi>-1?"project":h==="project"?"home":h);on?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current")});
+  nav=null;lb.onclose=null;clearInterval(tick);window.scrollTo(0,0);m.style.animation="none";void m.offsetWidth;m.style.animation="";
+  if(pi>-1){
+    const p=PROJECTS[pi];ctx=p.imgs.map((_,n)=>start[pi]+n);
+    if(p.mode==="slides"){
+      m.innerHTML=`<h1>${p.title}</h1>${meta(p)}<div class="stage sm"><button class="sp" aria-label="Previous"><svg viewBox="0 0 22 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M18 2 4 20l14 18"/></svg></button><img alt=""><button class="sn" aria-label="Next"><svg viewBox="0 0 22 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 2l14 18L4 38"/></svg></button></div>${p.text?`<p class="lead after">${p.text}</p>`:""}`;
+      let k=0;const im=m.querySelector(".stage img"),N=p.imgs.length;
+      const go=n=>{k=(n+N)%N;im.style.animation="none";void im.offsetWidth;im.style.animation="";const sz=(p.wide&&p.wide[k])?81:90;im.style.maxWidth=sz+"%";im.style.maxHeight=sz+"%";im.src=p.imgs[k];im.alt=`${p.title}, frame ${k+1}`};
+      const play=()=>{clearInterval(tick);if(!matchMedia("(prefers-reduced-motion:reduce)").matches)tick=setInterval(()=>{if(!lb.open&&!document.hidden)go(k+1)},3000)};const step=d=>{go(k+d);play()};go(0);play();nav=step;
+      m.querySelector(".sp").onclick=()=>step(-1);m.querySelector(".sn").onclick=()=>step(1);im.onclick=()=>{show(k);lb.showModal()};lb.onclose=()=>{if(cur!==k)go(cur);play()};
+      return;
+    }
+    m.innerHTML=`<h1>${p.title}</h1>${meta(p)}${p.text?`<p class="lead">${p.text}</p>`:""}<div class="frames">${ctx.map((g,n)=>fig(g,`${n+1} / ${ctx.length}`)).join("")}</div>`;
+  }else if(h==="works"){
+    slideshow(ALL.map((a,g)=>a.pi<0?g:-1).filter(g=>g>=0),"<h1>Works</h1>");return;
+    
+  }else if(h==="home"){
+    m.innerHTML=`<div class="home"><img src="${HOME}" alt="Presley Yang"></div>`;
+  }else if(h==="about"){
+    m.innerHTML=`<h1>About</h1><div class="about"><p>Presley Yang is a Los Angeles-based Taiwanese artist whose practice is rooted in analog photography and alternative processes. His work explores the interplay between image and material, using photography not as a means of representation but as a tactile, alchemical practice.</p><p>Drawing from the unpredictability of nature, he engages with landscapes and natural phenomena through experimental darkroom processes such as liquid emulsion, cyanotypes, and plant-based developers. By embracing the physicality of photographic materials, he examines the liminal space between image and object, permanence and impermanence. His work seeks to capture photography’s paradox—its ability to freeze a moment in time while remaining inherently fluid and ever-changing.</p><p class="meta">Email: <a href="mailto:presleyjyang829@gmail.com">presleyjyang829@gmail.com</a><br>Instagram: <a href="https://www.instagram.com/py_yang11" target="_blank" rel="noopener">py_yang11</a></p></div>`;
+  }else{
+    m.innerHTML=`<div class="home"><img src="${HOME}" alt="Presley Yang"></div>`;
+  }
+}
+function slideshow(list,head){
+  ctx=list;
+  m.innerHTML=`${head}<div class="stage"><button class="sp" aria-label="Previous"><svg viewBox="0 0 22 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M18 2 4 20l14 18"/></svg></button><img alt=""><button class="sn" aria-label="Next"><svg viewBox="0 0 22 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 2l14 18L4 38"/></svg></button></div>`;
+  let k=0;const im=m.querySelector(".stage img"),N=list.length;
+  const WSCALE={3:.85,4:.9};
+  const go=n=>{k=(n+N)%N;const a=ALL[list[k]];im.style.animation="none";void im.offsetWidth;im.style.animation="";const sc=(a.pi<0&&WSCALE[a.n])||1;im.style.maxWidth=(sc*100)+"%";im.style.maxHeight=(sc*100)+"%";im.src=a.s;im.alt=a.alt||""};
+  const play=()=>{clearInterval(tick);if(!matchMedia("(prefers-reduced-motion:reduce)").matches)tick=setInterval(()=>{if(!lb.open&&!document.hidden)go(k+1)},3000)};
+  const step=d=>{go(k+d);play()};
+  go(0);play();nav=step;
+  m.querySelector(".sp").onclick=()=>step(-1);m.querySelector(".sn").onclick=()=>step(1);
+  im.onclick=()=>{show(k);lb.showModal()};lb.onclose=()=>{if(cur!==k)go(cur);play()};
+}
+function show(k){cur=(k+ctx.length)%ctx.length;const a=ALL[ctx[cur]],im=lb.querySelector("img");im.style.animation="none";void im.offsetWidth;im.style.animation="";im.src=a.s;im.alt=a.alt||`${PROJECTS[a.pi].title}, frame ${a.n+1}`;lb.querySelector(".cap").textContent=`${cur+1} / ${ctx.length}`}
+m.addEventListener("click",e=>{const t=e.target.closest("img[data-g]");if(t){show(ctx.indexOf(+t.dataset.g));lb.showModal()}});
+lb.querySelector(".x").onclick=()=>lb.close();
+lb.querySelector(".pv").onclick=()=>show(cur-1);
+lb.querySelector(".nx").onclick=()=>show(cur+1);
+document.addEventListener("keydown",e=>{if(!lb.open){if(nav&&e.key==="ArrowLeft")nav(-1);if(nav&&e.key==="ArrowRight")nav(1);return}if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+(function(){const dd=document.querySelector(".dd"),btn=dd.querySelector("button");
+btn.addEventListener("click",e=>{e.stopPropagation();const o=dd.classList.toggle("open");btn.setAttribute("aria-expanded",o?"true":"false")});
+document.addEventListener("click",e=>{if(!e.target.closest(".dd")){dd.classList.remove("open");btn.setAttribute("aria-expanded","false")}});})();
+addEventListener("hashchange",render);render();
+</script>
+</body>
+</html>
